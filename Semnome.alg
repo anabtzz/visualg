@@ -7,31 +7,32 @@ var
       l,result: real
       cod:caracter
 inicio
- escreva("Digite quantos litros:")
- leia(l)
- escreva("Digite qual combustivel, A para alcool, G para gasolina:")
- leia(cod)
- 
- se(cod="A")entao
-    result:=L*(4.30-(4.30*3/100));
+  escreva("Digite quantos litros: ")
+  leia(l)
+  escreva("Digite qual combustivel, A para alcool, G para gasolina: ")
+  leia(cod)
+  
+  se(cod="A")entao
+    se(l<=20)entao
+    result:=(l*4.30)-(4.30*3/100)
+    escreva("O preço ficou:", result)
     senao
-    result:=l(4.30-(4.30*5/100));
-                                fimse
-    senao
-    escreva("O preço ficou:" result)
+    result:=l*(4.30-(4.30*5/100))
+    
     fimse
     
-    senao
+  senao
     se(cod="G") entao
-    result:=l*(5.50-(5.50*4/100));
-    
-    senao
-    result:=l*(5.50-(5.50*6/100));
-    fimse
+      se(l<=20)entao
+      result:=(l*5.50)-(5.50*4/100)
+      escreva("O preço final ficou: ", result)
+      senao
+      result:=l*(5.50-(5.50*6/100))
 
-    escreva("O preço final ficou:" result)
+      fimse
+      
     senao
-    
     escreva("O codigo invalido")
     fimse
+  fimse
 fimalgoritmo
